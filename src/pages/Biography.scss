@@ -1,0 +1,6 @@
+@use '../styles/partials' as *;
+@use '../styles/colors' as *;
+
+.body{
+    background-color: $background;
+}
