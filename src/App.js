@@ -1,13 +1,14 @@
 import Header from "./components/Header/Header";
 import Biography from "./pages/Biography/Biography";
 import {BrowserRouter,Routes, Route} from 'react-router-dom'
+import ProjectPage from "./pages/ProjectPage/ProjectPage";
 function App() {
   return (
     <BrowserRouter>
     <Header />
     <Routes>
       <Route path="/" element={<Biography />}/>
-      <Route path="/" element={<p>None</p>}/>
+      <Route path="/tactics" element={<ProjectPage projectURL={"https://tactics.zacharyringwood.com"}/>}/>
     </Routes>
     </BrowserRouter>
   );
