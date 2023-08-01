@@ -1,0 +1,17 @@
+@use '../../styles/partials' as *;
+@use '../../styles/colors' as *;
+.navlist{
+    list-style-type: none;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    margin:0;
+    padding: $mobile-indent;
+    &__link{
+        .active{
+            padding: $mobile-indent 0;
+            
+            background-color: $foreground;
+        }
+    }
+}

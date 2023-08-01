@@ -6,8 +6,8 @@ function App() {
     <BrowserRouter>
     <Header />
     <Routes>
-    <Route to="/" element={<Biography />}/>
-
+      <Route path="/" element={<Biography />}/>
+      <Route path="/" element={<p>None</p>}/>
     </Routes>
     </BrowserRouter>
   );

@@ -3,4 +3,20 @@
 
 .body{
     background-color: $background;
+    &__section{
+        padding: $mobile-indent;
+        &--profile{
+            display: flex;
+            flex-direction: column;
+        }
+        &--foreground{
+            background-color: $foreground;
+        }
+    }
+    &__profileContent{
+        color:white;
+    }
+}
+.headshot{
+    width:100%;
 }
