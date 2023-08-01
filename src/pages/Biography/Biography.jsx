@@ -1,6 +1,6 @@
 import "./Biography.scss"
-import Headshot from "../assets/headshot.jpg"
-import TacticsDB_icon from "../assets/tacticsDB-icon.svg"
+import Headshot from "../../assets/headshot.jpg"
+import TacticsDB_icon from "../../assets/tacticsDB-icon.svg"
 function Biography() {
     return (
         <body className="body">
