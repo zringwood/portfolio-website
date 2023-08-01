@@ -16,7 +16,14 @@ function Biography(){
                 <p className="projectCard__description">A huge database of pick-up-and-play chess puzzles for your commute!</p>
             </div>
         </article>
-        <article className="body__section">Skills</article>
+        <article className="body__section">
+            <h2>Skills</h2>
+            <h3>Webdev</h3>
+            <h3>Cloud</h3>
+            <h3>Business</h3>
+            <h3>Philosophy</h3>
+            <h3>Hand-to-Hand Combat</h3>
+        </article>
         <article className="body__section body__section--foreground">
             <h2>Education</h2>
             <h3>Brainstation</h3>
