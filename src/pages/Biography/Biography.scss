@@ -1,6 +1,8 @@
 @use '../../styles/partials' as *;
 @use '../../styles/colors' as *;
-
+ul{
+    list-style-type: none;
+}
 .body{
     background-color: $background;
     &__section{

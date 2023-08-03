@@ -9,9 +9,9 @@
     padding: $mobile-indent;
     &__link{
         .active{
-            padding: $mobile-indent 0;
+            padding: $mobile-indent 1rem;
             
-            background-color: $foreground;
+            background-color: $background;
         }
     }
 }

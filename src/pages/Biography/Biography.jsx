@@ -6,7 +6,9 @@ function Biography() {
         <body className="body">
             <article className="body__section body__section--profile">
                 <img className="headshot" src={Headshot} alt="My Headshot"></img>
-                <p className="body__profileContent">Loren Ipsum Dolor Sit Amet</p>
+                <p className="body__profileContent">I am an ambitious software engineer with a passion for mathematics and elegant
+                    problem-solving. With a strong background in the humanities complimenting my dedication to software development I’m sure I can be a valuable addition to any team.
+                </p>
                 <a href="https://linkedin.com/in/zachary-ringwood">Linkedin</a>
                 <a href="https://github.com/zringwood">Github</a>
             </article>
@@ -32,8 +34,8 @@ function Biography() {
                     <li>CSS</li>
                     <li>SASS</li>
                 </ul>
+                <h3>Data</h3>
                 <ul>
-                    <h3>Data</h3>
                     <li>Tableau</li>
                     <li>R</li>
                     <li>Python</li>
@@ -58,19 +60,14 @@ function Biography() {
                     <li>Platonic Forms</li>
                     <li>French Phenomenology in the early 20th Century</li>
                 </ul>
-                <h3>Hand-to-Hand Combat</h3>
-                <ul>
-                    <li>Judo (Tokui-Waza: Uchi-Mata)</li>
-                    <li>Brazilian Jiu Jitsu</li>
-                    <li>Boxing</li>
-                    <li>Sword</li>
-                </ul>
             </article>
             <article className="body__section body__section--foreground">
                 <h2>Education</h2>
                 <h3>Brainstation</h3>
+                <h4>Diploma in Software Development</h4>
                 <h3>Toronto Metropolitan</h3>
-                <h3>RSGC (Chris D'Arcy)</h3>
+                <h4>Bachelors Degree in Philosophy</h4>
+                <h3>RSGC</h3>
             </article>
             <article className="body__section">
                 <h2>Interests</h2>
