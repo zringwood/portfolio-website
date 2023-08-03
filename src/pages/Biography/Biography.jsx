@@ -1,7 +1,9 @@
 import "./Biography.scss"
 import Headshot from "../../assets/headshot.jpg"
 import TacticsDB_icon from "../../assets/tacticsDB-icon.svg"
+import { useNavigate } from "react-router"
 function Biography() {
+    const navigate = useNavigate()
     return (
         <body className="body">
             <article className="body__section body__section--profile">
@@ -14,7 +16,7 @@ function Biography() {
             </article>
             <article className="body__section body__section--foreground body__section--projects">
                 <h2>Projects</h2>
-                <div className="projectCard">
+                <div className="projectCard" onClick={() => navigate("/tactics")}>
                     <h3 className="projectCard__title">Tactics DB</h3>
                     <div className="projectCard__content">
                         <img className="projectCard__icon" src={TacticsDB_icon} alt=""></img>
