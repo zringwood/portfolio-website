@@ -1,5 +1,5 @@
 import "./Biography.scss"
-import Headshot from "../../assets/headshot.jpg"
+import Headshot from "../../assets/headshot.png"
 import TacticsDB_icon from "../../assets/tacticsDB-icon.svg"
 import { useNavigate } from "react-router"
 function Biography() {
@@ -26,16 +26,27 @@ function Biography() {
             </article>
             <article className="body__section">
                 <h2>Skills</h2>
-                <h3>Webdev</h3>
-                <ul>
-                    <li>React</li>
-                    <li>Javascript</li>
-                    <li>MySQL</li>
-                    <li>NoSQL</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>SASS</li>
+                <div className="skills">
+                <article className="skillcard">
+                <h3 className="skillcard__title">Webdev</h3>
+                <ul className="skillcard__list">
+                    <li className="skillcard__skill">React</li>
+                    <li className="skillcard__skill">Javascript</li>
+                    <li className="skillcard__skill">MySQL</li>
+                    <li className="skillcard__skill">NoSQL</li>
+                    <li className="skillcard__skill">HTML</li>
+                    <li className="skillcard__skill">CSS</li>
+                    <li className="skillcard__skill">SASS</li>
                 </ul>
+                </article>
+                <article className="skillcard">
+                <h3>Cloud</h3>
+                <ul>
+                    <li>Google Cloud Platform</li> <li>Docker</li> <li>YAML</li>
+                </ul>
+                </article>
+                <article className="skillcard">
+                    
                 <h3>Data</h3>
                 <ul>
                     <li>Tableau</li>
@@ -45,10 +56,8 @@ function Biography() {
                     <li>Git</li>
 
                 </ul>
-                <h3>Cloud</h3>
-                <ul>
-                    <li>Google Cloud Platform</li> <li>Docker</li> <li>YAML</li>
-                </ul>
+                </article>
+                </div>
                 <h3>Business</h3>
                 <ul>
                     <li>Microsoft Excel</li>
@@ -62,6 +71,7 @@ function Biography() {
                     <li>Platonic Forms</li>
                     <li>French Phenomenology in the early 20th Century</li>
                 </ul>
+                
             </article>
             <article className="body__section body__section--foreground">
                 <h2>Education</h2>
