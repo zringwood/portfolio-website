@@ -5,7 +5,7 @@ import { useNavigate } from "react-router"
 function Biography() {
     const navigate = useNavigate()
     return (<>
-            <article className="profile">
+            <section className="profile">
                 <div className="profile__content">
                 <img className="profile__headshot" src={Headshot} alt="My Headshot"></img>
                 <p className="profile__text">I am an ambitious software engineer with a passion for mathematics and elegant
@@ -16,9 +16,9 @@ function Biography() {
                     <a href="https://linkedin.com/in/zachary-ringwood">Linkedin</a>
                     <a href="https://github.com/zringwood">Github</a>
                 </div>
-            </article>
-            <article className="body__section body__section--foreground body__section--projects">
-                <h2>Projects</h2>
+            </section>
+            <section className="projects">
+                <h2 className="projects__title">Projects</h2>
                 <div className="projectCard" onClick={() => navigate("/tactics")}>
                     <h3 className="projectCard__title">Tactics DB</h3>
                     <div className="projectCard__content">
@@ -26,8 +26,8 @@ function Biography() {
                         <p className="projectCard__description">A huge database of pick-up-and-play chess puzzles for your commute!</p>
                     </div>
                 </div>
-            </article>
-            <article className="body__section">
+            </section>
+            <section className="skills">
                 <h2>Skills</h2>
                 <div className="skills">
                 <article className="skillcard">
@@ -75,20 +75,15 @@ function Biography() {
                     <li>French Phenomenology in the early 20th Century</li>
                 </ul>
                 
-            </article>
-            <article className="body__section body__section--foreground">
+            </section>
+            <section className="education">
                 <h2>Education</h2>
                 <h3>Brainstation</h3>
                 <h4>Diploma in Software Development</h4>
                 <h3>Toronto Metropolitan</h3>
                 <h4>Bachelors Degree in Philosophy</h4>
                 <h3>RSGC</h3>
-            </article>
-            <article className="body__section">
-                <h2>Interests</h2>
-                <h3>Chess</h3>
-                <h3>Judo / BJJ</h3>
-            </article>
+            </section>
         </>)
 }
 

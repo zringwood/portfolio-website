@@ -3,6 +3,15 @@
 ul{
     list-style-type: none;
 }
+section{
+    padding: $mobile-indent;
+    @include tablet{
+        padding: $tablet-indent;
+    }
+    @include desktop {
+        padding:0;
+    }
+}
 .profile{
     background-color: $background;
     padding: $mobile-indent;
@@ -33,18 +42,17 @@ ul{
         justify-content: space-around;
     }
 }
-.body{
-    background-color: $background;
-    &__section{
-        
-       
-        
-        &--foreground{
-            background-color: $foreground;
+.projects{
+    background-color: $foreground;
+    &__title{
+        margin-bottom: 1rem;
+        @include tablet{
+            margin-bottom: 1.5rem;
         }
     }
 }
 .skills{
+    background-color: $background;
     @include desktop{
         display: flex;
 
