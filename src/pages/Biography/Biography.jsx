@@ -4,15 +4,18 @@ import TacticsDB_icon from "../../assets/tacticsDB-icon.svg"
 import { useNavigate } from "react-router"
 function Biography() {
     const navigate = useNavigate()
-    return (
-        <body className="body">
-            <article className="body__section body__section--profile">
-                <img className="headshot" src={Headshot} alt="My Headshot"></img>
-                <p className="body__profileContent">I am an ambitious software engineer with a passion for mathematics and elegant
+    return (<>
+            <article className="profile">
+                <div className="profile__content">
+                <img className="profile__headshot" src={Headshot} alt="My Headshot"></img>
+                <p className="profile__text">I am an ambitious software engineer with a passion for mathematics and elegant
                     problem-solving. With a strong background in the humanities complimenting my dedication to software development I’m sure I can be a valuable addition to any team.
                 </p>
-                <a href="https://linkedin.com/in/zachary-ringwood">Linkedin</a>
-                <a href="https://github.com/zringwood">Github</a>
+                </div>
+                <div className="profile__links">
+                    <a href="https://linkedin.com/in/zachary-ringwood">Linkedin</a>
+                    <a href="https://github.com/zringwood">Github</a>
+                </div>
             </article>
             <article className="body__section body__section--foreground body__section--projects">
                 <h2>Projects</h2>
@@ -86,7 +89,7 @@ function Biography() {
                 <h3>Chess</h3>
                 <h3>Judo / BJJ</h3>
             </article>
-        </body>)
+        </>)
 }
 
 export default Biography;

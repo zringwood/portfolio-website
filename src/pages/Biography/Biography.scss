@@ -3,30 +3,45 @@
 ul{
     list-style-type: none;
 }
+.profile{
+    background-color: $background;
+    padding: $mobile-indent;
+    @include tablet{
+        padding: $tablet-indent;
+    }
+    &__headshot{
+        width:100%;
+        @include tablet{
+            width:50%;
+            height:50%;
+        }
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        @include tablet{
+            flex-direction: row;
+            column-gap: $tablet-indent;
+        }
+    }
+    &__text{
+        color: white;
+    }
+    &__links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
 .body{
     background-color: $background;
     &__section{
-        padding: $mobile-indent;
-        .headshot{
-            width:100%;
-            @include tablet{
-                width:50%;
-                height:50%;
-            }
-        }
-        &--profile{
-            display: flex;
-            flex-direction: column;
-            @include tablet{
-                flex-direction: row;
-            }
-        }
+        
+       
+        
         &--foreground{
             background-color: $foreground;
         }
-    }
-    &__profileContent{
-        color:white;
     }
 }
 .skills{
