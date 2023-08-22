@@ -1,3 +1,7 @@
+@use '../../styles/partials.scss' as *;
+@use '../../styles/animations.scss' as *;
+
+
 .skill{
     display: flex;
     flex-direction: row;
@@ -9,28 +13,27 @@
     font-weight: 400;
 }
 .skill__dropdown{
-    animation-name: slidein;
+    animation-name: dropdown;
     animation-duration: 1s;
     overflow: hidden;
 }
-@keyframes slidein {
-    from {
-       max-height: 0;
-    } to {
-        // This just needs to be an arbitrarily high value
-      max-height: 700px;
-    }
-}
+
 .skill__chevron{
     transform: rotate(270deg);
-    width:12px;
-    height: 12px;
+    width:0.75rem;
+    height: 0.75rem;
     background-color: rgba(0,0,0,0);
     border:none;
     outline:none;
     background-image: url("../../assets/down-chevron.svg");
     background-position: center;
     background-size: cover;
+    @include tablet{
+        height:1rem
+    }
+    @include desktop{
+        height:1.5rem
+    }
 }
 .skill__chevron--clicked{
     transition: 0.5s;
