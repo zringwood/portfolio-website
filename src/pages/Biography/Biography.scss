@@ -9,7 +9,7 @@ section{
         padding: $tablet-indent;
     }
     @include desktop {
-        padding:0;
+        padding: $tablet-indent;
     }
 }
 .profile{
@@ -31,10 +31,12 @@ section{
         @include tablet{
             flex-direction: row;
             column-gap: $tablet-indent;
+            margin-bottom: 1rem;
         }
     }
     &__text{
         color: white;
+        margin:0;
     }
     &__links{
         display: flex;
@@ -53,6 +55,17 @@ section{
 }
 .skills{
     background-color: $background;
+    
+
+}
+.skills__list{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    justify-content: center;
+    // align-items: center;
     @include desktop{
         display: flex;
 

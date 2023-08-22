@@ -1,0 +1,22 @@
+@use '../../styles/partials' as *;
+@use '../../styles/colors' as *;
+
+.skillcard{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border:1px solid $divider;
+    border-radius: 12px;
+    padding: $mobile-indent;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    width: 13.25rem;
+    @include tablet{
+        width: 15rem;
+    }
+    &__list{
+        width:100%;
+        padding:0;
+    }
+    
+    
+}
