@@ -1,6 +1,7 @@
 @use '../../styles/partials' as *;
 @use '../../styles/colors' as *;
 .sidebar{
+    z-index: 20;
     position: fixed;
         right: 5%;
         top: 5%;
@@ -21,6 +22,7 @@
             background-position:center;
         background-size:fill;
         }
+        
     }
     &__panel{
         height: 80vh;
@@ -37,6 +39,7 @@
         padding: 0.5rem;
         background-color: grey;
         border-radius: 4px;
+        text-decoration: none;
     }
     &__link:hover{
         background-color: darkgray;

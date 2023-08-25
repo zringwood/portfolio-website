@@ -31,7 +31,6 @@ $desktop-indent: calc(
 );
 
 a {
-  text-decoration: none;
   color:$text;
   @include tablet{
     font-size: 1.5rem;
