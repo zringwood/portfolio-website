@@ -1,17 +1,36 @@
 @use '../../styles/partials' as *;
 @use '../../styles/colors' as *;
-.navlist{
-    list-style-type: none;
-    display:flex;
-    justify-content: space-evenly;
-    align-items: baseline;
-    margin:0;
-    padding: $mobile-indent;
+.sidebar{
+    position: fixed;
+        right: 5%;
+        top: 5%;
+    &__activate{
+        border-radius: 50%;
+        outline: none;
+        border: 3px solid black;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    &__panel{
+        width: 20vw;
+        height: 80vh;
+        background-color: green;
+        display:flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        padding: 1rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5 );
+        border-radius: 20px;
+    }
     &__link{
-        .active{
-            padding: $mobile-indent 1rem;
-            
-            background-color: $background;
-        }
+        padding: 0.5rem;
+        background-color: grey;
+        border-radius: 4px;
+    }
+    &__link:hover{
+        background-color: darkgray;
     }
 }
