@@ -12,6 +12,23 @@ section{
         padding: $tablet-indent;
     }
 }
+.contact{
+    background-color: $background;
+    padding: $mobile-indent;
+    &__flex{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 50%;
+    }
+    @include tablet{
+        padding: $tablet-indent;
+    }
+    @include desktop {
+        padding: $tablet-indent;
+    }
+}
+
 .profile{
     background-color: $background;
     padding: $mobile-indent;

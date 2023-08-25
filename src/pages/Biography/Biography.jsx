@@ -80,6 +80,14 @@ function Biography() {
                 <h3>Toronto Metropolitan</h3>
                 <h4>Bachelors Degree in Philosophy</h4>
             </section>
+            <footer className="contact">
+                <p>Email: zringwood@gmail.com</p>
+                <p>Phone: +1 647 648 4748</p>
+                <div className="contact__flex">
+                <p> <a href = "https://linkedin.com/in/zachary-ringwood">LinkedIn</a></p>
+                <p> <a href = "http://github.com/zringwood">GitHub</a></p>
+                </div>
+            </footer>
         </>)
 }
 
