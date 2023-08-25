@@ -120,14 +120,18 @@ section{
         }
     }
     &--short{
-        animation-duration: 2s;
+        @include tablet{
+            animation-duration: 2s;
+        }
     }
     &--medium{
-        animation-duration: 3s;
-    }
+        @include tablet{
+            animation-duration: 3s;
+        }    }
     &--long{
-        animation-duration: 5s;
-    }
+        @include tablet{
+            animation-duration: 4s;
+        }    }
 }
 .projectCard{
     display:flex;
