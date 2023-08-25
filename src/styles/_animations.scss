@@ -7,6 +7,14 @@
         transform: translateX(0);
     }
 }
+@keyframes slideright {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
 @keyframes slideout {
     from {
         transform: translateX(0);
@@ -46,7 +54,17 @@
         opacity: 1;
     }
 }
+@keyframes fadeup {
+    from {
+        transform: translateY(50%);
+        opacity: 0;
+    }
 
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 @keyframes dropdown {
     from {
         max-height: 0;

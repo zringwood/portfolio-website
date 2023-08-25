@@ -3,8 +3,10 @@ import Headshot from "../../assets/headshot.png"
 import TacticsDB_icon from "../../assets/tacticsDB-icon.svg"
 import { useNavigate } from "react-router"
 import SkillCard from "../../components/SkillCard/SkillCard"
+import AnimationSection from "../../components/AnimationSection/AnimationSection"
 function Biography() {
     const navigate = useNavigate()
+    
     return (<>
             <section className="profile">
                 <div className="profile__content">
@@ -20,18 +22,19 @@ function Biography() {
             </section>
             <section className="projects">
                 <h2 className="projects__title">Projects</h2>
-                <div className="projectCard" onClick={() => navigate("/tactics")}>
+                <AnimationSection className="projectCard" animations={"projectCard--fadeup"} onClick={() => navigate("/tactics")}>
                     <h3 className="projectCard__title">Tactics DB</h3>
                     <div className="projectCard__content">
                         <img className="projectCard__icon" src={TacticsDB_icon} alt=""></img>
                         <p className="projectCard__description">A huge database of pick-up-and-play chess puzzles for your commute!</p>
                     </div>
-                </div>
+                </AnimationSection>
             </section>
             <section className="skills">
                 <h2>Skills</h2>
                 <br></br>
                 <div className="skills__list">
+                <AnimationSection animations={"skillcard--slideleft"}>
                 <SkillCard title="Webdev" skillArray={
                     [
                         {title:"React", writeup:"React is my best framework and the one I learned at Brainstation. All of my portfolio projects were created using React, including this website."},
@@ -43,6 +46,8 @@ function Biography() {
                         {title:"SASS", writeup:"SASS is my preferred framework for styling webpages. I have some limited experience with other frameworks, but I find SASS to be the most flexible."},
                     ]
                 }/>
+                </AnimationSection>
+                <AnimationSection animations={"skillcard--slideright skillcard--short"}>
                 <SkillCard title="Cloud" skillArray={
                     [
                         {title:"Google Cloud Platform", writeup:"The website you're on right now is hosted on Google Cloud Platform via one of their buckets. The projects are all hosted through Cloud Run. I chose Google Cloud Platform because I bought this domain through Google, so it's slightly faster to authenticate."},
@@ -50,6 +55,8 @@ function Biography() {
                         {title:"YAML", writeup:"I use YAML with GCP to containerize applications through code hosted on Github."},
                     ]
                 }/>
+                </AnimationSection>
+                <AnimationSection animations={"skillcard--slideleft  skillcard--medium"}>
                  <SkillCard title="Misc-Tech" skillArray={
                     [
                         {title:"Tableau", writeup:"I got quite comfortable with Tableau while writing a now-dropped project for a specialized chess engine. I used it primarily to sanitize data."},
@@ -57,7 +64,8 @@ function Biography() {
                         {title:"Git", writeup:"I am familiar with using Git through GitHub for version control. I also use it with a GCP pipeline to deploy new revisions directly to the cloud through Google Cloud Build."},
                     ]
                 }/>
-                
+                </AnimationSection>
+                <AnimationSection animations={"skillcard--slideright  skillcard--long"}>
                 <SkillCard title="Buisness" skillArray={
                     [
                         {title:"Public Speaking",
@@ -71,7 +79,9 @@ function Biography() {
                         }
                     ]
                 } />
+                </AnimationSection>
                 </div>
+                
             </section>
             <section className="education">
                 <h2>Education</h2>

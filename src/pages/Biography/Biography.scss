@@ -1,5 +1,6 @@
 @use '../../styles/partials' as *;
 @use '../../styles/colors' as *;
+@use '../../styles/animations' as *;
 ul{
     list-style-type: none;
 }
@@ -103,6 +104,30 @@ section{
             font-size: 2rem;
         }
     }
+    &--slideleft{
+        animation-name: slidein;
+        animation-duration: 1s;
+        @include tablet{
+            animation-name: fadein;
+            animation-duration: 1s;
+        }
+    }
+    &--slideright{
+        animation-name: slideright;
+        animation-duration: 1s;
+        @include tablet{
+            animation-name: fadein;
+        }
+    }
+    &--short{
+        animation-duration: 2s;
+    }
+    &--medium{
+        animation-duration: 3s;
+    }
+    &--long{
+        animation-duration: 5s;
+    }
 }
 .projectCard{
     display:flex;
@@ -126,5 +151,9 @@ section{
     }
     &__icon{
         height:80px;
+    }
+    &--fadeup{
+        animation-name: fadeup;
+        animation-duration: 1s;
     }
 }

@@ -2,11 +2,12 @@ import "./SkillCard.scss"
 import Skill from "../Skill/Skill"
 function SkillCard({title, skillArray}){
     return (
-        <article class="skillcard">
+        <article className="skillcard">
             <h3>{title}</h3>
-            <ul class="skillcard__list">
+            <ul className="skillcard__list">
                 {skillArray.map((e) => {
-                    return (<li className="skillcard__skill">
+                    return (
+                    <li className="skillcard__skill" key={e.title}>
                         <Skill title={e.title} writeup={e.writeup}/>
                     </li>)
                 })}
