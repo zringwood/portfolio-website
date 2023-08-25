@@ -7,16 +7,25 @@
     &__activate{
         border-radius: 50%;
         outline: none;
-        border: 3px solid black;
+        border: none;
         position: absolute;
         right: 0;
         top: 0;
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 2rem;
+        height: 2rem;
+        color:$text;
+        background-image: url("../../assets/hamburger-menu-closed.svg");
+        background-size:contain;
+        &--open{
+            background-image: url("../../assets/hamburger-menu-open.svg");
+            background-position:center;
+        background-size:fill;
+        }
     }
     &__panel{
         height: 80vh;
-        background-color: green;
+        background-color: $foreground;
+        border: 1px solid $divider;
         display:flex;
         flex-direction: column;
         row-gap: 1rem;
