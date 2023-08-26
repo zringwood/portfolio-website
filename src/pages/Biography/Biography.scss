@@ -86,10 +86,15 @@ section{
     row-gap: 1rem;
     column-gap: 1rem;
     justify-content: center;
-    // align-items: center;
+    @include tablet{
+        width:70%;
+        row-gap: 3rem;
+        column-gap: 3rem;
+        margin: 0 auto;
+    }
     @include desktop{
         display: flex;
-
+        flex-wrap: nowrap;
     }
 }
 .skillcard{
