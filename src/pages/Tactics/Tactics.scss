@@ -2,34 +2,39 @@
 @use '../../styles/colors' as *;
 
 
-.project-frame{
-    width:100%;
-    height:100vh;
-    border:none;
-}
 .tactics{
     background-color: $background;
     padding: $mobile-indent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     @include tablet{
         padding: $tablet-indent;
     }
     @include desktop {
-        padding: $tablet-indent;
+        padding: $tablet-indent $desktop-indent;
     }
     &__image{
         width: 100%;
-        &--spoiler{
-            filter:blur(10px)
+        @include desktop{
+            width: 60%;
+           
         }
     }
 }
 .spoiler{
     position: relative;
+    @include desktop{
+        width: 60%;
+    }
     &__image{
         width: 100%;
+        
         &--filter{
-            filter:blur(10px)
+            filter:blur(25px)
         }
+
     }
     &__label{
         color:black;
