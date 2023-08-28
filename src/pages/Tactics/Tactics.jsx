@@ -22,10 +22,12 @@ function Tactics({projectURL}){
         </div>
         <p>Easy enough, right? But the puzzles can get much harder than that, with over 3 MILLION puzzles to play, all loaded from a NoSQL database.</p>
         <h3 className="tactics__title">The Backend.</h3>
-        <p> The puzzles are stored in a NoSQL database in Firebase Realtime Database and hosted with Google Firebase. I populated it myself, using data I got from Lichess.com <a href="https://database.lichess.org/#puzzles">here.</a> These puzzles are in CSV format, and can be loaded into the NoSQL database painlessly.</p>
+        <p> The puzzles are stored in a NoSQL database in Firebase Realtime Database and hosted with Google Firebase. I populated it myself, using data I got from Lichess.com <a href="https://database.lichess.org/#puzzles" target="_blank">here.</a> These puzzles are in CSV format, and can be loaded into the NoSQL database painlessly.</p>
         <p> Originally I was using BigQuery instead of Firebase. BigQuery is a data analytics tool used mainly for making SQL queries on enormous data sets, measured in the terabyte range. Because it's designed for such massive datasets, the free tier is very generous, offering 10 gigabytes of storage before it starts charging. However, BigQuery wound up being too slow and also lead to odd bugs due to how it actually makes the queries. Overall it wound up being a good opportunity to learn multiple database styles. </p>
         <h3 className="tactics__title">The Frontend.</h3>
-
+        <p>The UI is exactly what I feel a user interface should be. Cut-down, barebones, and restrained. This is probably a poor approach to showing off my skills with CSS, but I suppose that's what this website is for.</p>
+        <p>I didn't build the chessboard. That's a third-party library called <a href="https://github.com/Clariity/react-chessboard" target="_blank">React Chessboard</a> React Chessboard has some slightly odd qualities I had to work around. For one thing, it interprets every change as a new move and animates the move accordingly. This winds up being a very ugly transition between puzzles. To remove this, the entire board is actually unloaded between puzzles, and an empty board is loaded instead. This leads to a cleaner appearance.</p>
+        
 
         </article>
     )
