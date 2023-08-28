@@ -22,11 +22,18 @@ function Biography() {
             </section>
             <section className="projects">
                 <h2 className="projects__title">Projects</h2>
-                <AnimationSection className="projectCard" animations={"projectCard--fadeup"} onClick={() => navigate("/tactics")}>
-                    <h3 className="projectCard__title">Tactics DB</h3>
+                <AnimationSection className="projectCard" animations={"projectCard--fadeup"}  onClick={() => navigate("/tactics")}>
+                    <h3 className="projectCard__title" >Tactics DB</h3>
                     <div className="projectCard__content">
                         <img className="projectCard__icon" src={TacticsDB_icon} alt=""></img>
                         <p className="projectCard__description">A huge database of pick-up-and-play chess puzzles for your commute!</p>
+                    </div>
+                </AnimationSection>
+                <AnimationSection className="projectCard" animations={"projectCard--fadeup"} onClick={() => navigate("/portfolio")}>
+                    <h3 className="projectCard__title">Portfolio Website</h3>
+                    <div className="projectCard__content">
+                        <img className="projectCard__icon" src={TacticsDB_icon} alt=""></img>
+                        <p className="projectCard__description">Click here for a writeup on how this website was designed using Amazon's microservices model of cloud computing.</p>
                     </div>
                 </AnimationSection>
             </section>
