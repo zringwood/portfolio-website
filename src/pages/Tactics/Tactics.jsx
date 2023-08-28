@@ -2,7 +2,7 @@ import "./Tactics.scss"
 
 import IntroPuzzle from "../../assets/images/intropuzzle.PNG"
 import IntroPuzzleSolution from "../../assets/images/intropuzzle-solved.PNG"
-
+import Snippet from "../../assets/images/onclick.PNG"
 import { useState } from "react"
 function Tactics({projectURL}){
     const [isBlurred, setIsBlurred] = useState(true)
@@ -27,7 +27,9 @@ function Tactics({projectURL}){
         <h3 className="tactics__title">The Frontend.</h3>
         <p>The UI is exactly what I feel a user interface should be. Cut-down, barebones, and restrained. This is probably a poor approach to showing off my skills with CSS, but I suppose that's what this website is for.</p>
         <p>I didn't build the chessboard. That's a third-party library called <a href="https://github.com/Clariity/react-chessboard" target="_blank">React Chessboard</a> React Chessboard has some slightly odd qualities I had to work around. For one thing, it interprets every change as a new move and animates the move accordingly. This winds up being a very ugly transition between puzzles. To remove this, the entire board is actually unloaded between puzzles, and an empty board is loaded instead. This leads to a cleaner appearance.</p>
-        
+        <p>Have a look at the following code snippet:</p>
+        <img className="tactics__image" src={Snippet} alt="Example function from Tactics DB" />
+        <p>This is code I wrote after reading <a href="https://www.amazon.ca/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Code: A Handbook of Agile Software Craftsmanship</a> by Robert Martin, aka Uncle Bob. It emphasizes clean, small functions without side effects. I'm very proud of how well the PuzzleBoard component is written, and I encourage you to check it out <a href="https://github.com/zringwood/tactics-db-gcp/blob/master/src/components/PuzzleBoard/PuzzleBoard.jsx">here, on my GitHub.</a></p>
 
         </article>
     )
