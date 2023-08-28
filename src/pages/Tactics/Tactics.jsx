@@ -22,6 +22,8 @@ function Tactics({projectURL}){
         </div>
         <p>Easy enough, right? But the puzzles can get much harder than that, with over 3 MILLION puzzles to play, all loaded from a NoSQL database.</p>
         <h3 className="tactics__title">The Backend.</h3>
+        <p> The puzzles are stored in a NoSQL database in Firebase Realtime Database and hosted with Google Firebase. I populated it myself, using data I got from Lichess.com <a href="https://database.lichess.org/#puzzles">here.</a> These puzzles are in CSV format, and can be loaded into the NoSQL database painlessly.</p>
+        <p> Originally I was using BigQuery instead of Firebase. BigQuery is a data analytics tool used mainly for making SQL queries on enormous data sets, measured in the terabyte range. Because it's designed for such massive datasets, the free tier is very generous, offering 10 gigabytes of storage before it starts charging. However, BigQuery wound up being too slow and also lead to odd bugs due to how it actually makes the queries. Overall it wound up being a good opportunity to learn multiple database styles. </p>
         <h3 className="tactics__title">The Frontend.</h3>
 
 
