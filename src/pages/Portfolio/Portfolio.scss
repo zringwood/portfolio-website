@@ -1,0 +1,23 @@
+@use '../../styles/partials' as *;
+@use '../../styles/colors' as *;
+
+.spin{
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0)
+    }
+
+    to {
+        transform: rotate(1440deg)
+    }
+}
+.portfolio__img{
+    width:100%;
+    @include tablet{
+        width:50%;
+    }
+}

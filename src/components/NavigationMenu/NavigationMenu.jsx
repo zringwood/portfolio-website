@@ -21,7 +21,6 @@ function NavigationMenu() {
       };
       useEffect(() => {
         theme.palette.mode = isDarkMode ? 'dark' : 'light'
-        console.log("Reached")
       }, [isDarkMode, theme])
     return <Box sx={{
       position:'fixed',

@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material"
+import { Typography } from "@mui/material"
 import { useState } from "react"
 import './Spoiler.scss'
 export default function Spoiler({ src, alt, sx}){

@@ -1,6 +1,8 @@
 import Biography from "./pages/Biography/Biography";
 import {BrowserRouter,Routes, Route} from 'react-router-dom'
 import Tactics from "./pages/Tactics/Tactics";
+import Portfolio from "./pages/Portfolio/Portfolio";
+
 import NavigationMenu from "./components/NavigationMenu/NavigationMenu";
 import Footer from "./components/Footer/Footer";
 import { ThemeProvider, createTheme } from "@mui/material";
@@ -30,6 +32,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Biography />}/>
       <Route path="/tactics" element={<Tactics projectURL={"https://tactics.zacharyringwood.com"}/>}/>
+      <Route path="/portfolio" element={<Portfolio />}/>
+
     </Routes>
     <Footer/>
     </BrowserRouter>
