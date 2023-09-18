@@ -8,7 +8,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
     <BrowserRouter>
-    <NavigationMenu />
+    <NavigationMenu sx={{
+      zIndex: 20,
+     position: "fixed",
+         right: "5%",
+         top: "5%",}}/>
     <Routes>
       <Route path="/" element={<Biography />}/>
       <Route path="/tactics" element={<Tactics projectURL={"https://tactics.zacharyringwood.com"}/>}/>
