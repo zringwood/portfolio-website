@@ -23,7 +23,7 @@ function App() {
     <ThemeProvider theme={theme}>
     <BrowserRouter>
     <NavigationMenu sx={{
-      zIndex: 20,
+      zIndex: 200000,
      position: "fixed",
          right: "5%",
          top: "5%",}}/>

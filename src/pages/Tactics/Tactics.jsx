@@ -26,7 +26,7 @@ function Tactics() {
             justifyContent: "center",
             alignItems: "center",
             backgroundColor:"background.default"}}>
-            <Typography className="fadein" component="h1" variant="h1">Tactics DB</Typography>
+            <Typography className="fadein" component="h2" variant="h2">Tactics DB</Typography>
            <Typography className="fadein--mediumdelay" sx = {{opacity:`${medium ? 0:1}`}}variant="h4">A casual way to engage with chess.</Typography>
             
             <Typography  className="fadein--longdelay" sx = {{opacity:`${long ? 0:1}`}} variant="body1" >Tactics DB was my capstone project while studying at Brainstation. It was an attempt to put everything I had learned into a single project, combining a huge backend, mutliple third-party libraries, and deploying everything to the Cloud.</Typography>
