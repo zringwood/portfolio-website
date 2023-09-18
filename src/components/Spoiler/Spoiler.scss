@@ -3,17 +3,11 @@
 
 .spoiler{
     position: relative;
-    @include desktop{
-        width: 60%;
-    }
-    &__image{
-        width: 100%;
-        
+    &__image{        
         &--filter{
             mask:linear-gradient(black, black);
             filter:blur(25px);
         }
-
     }
     &__label{
         color:black;

@@ -14,6 +14,7 @@ function Biography() {
     padding:theme.spacing(3),
     backgroundColor:"background.default"
   }
+  console.log("Reached")
     return (<>
             <Box component="section"  
             sx={{...section}} >

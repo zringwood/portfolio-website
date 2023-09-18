@@ -21,6 +21,7 @@ function NavigationMenu() {
       };
       useEffect(() => {
         theme.palette.mode = isDarkMode ? 'dark' : 'light'
+        console.log("Reached")
       }, [isDarkMode, theme])
     return <Box sx={{
       position:'fixed',
@@ -42,7 +43,7 @@ function NavigationMenu() {
       >
         <List>
         <ListItem sx={listItem} onClick={() => {handleClose(); navigate('/')}}><Home /><Typography>Home</Typography></ListItem>
-        <ListItem sx={listItem} onClick={() => {handleClose(); navigate('/tactics')}}><Chess /><Typography>Tactics</Typography></ListItem>
+        <ListItem sx={listItem} onClick={() => {handleClose(); navigate('/tactics');window.scrollTo(0,0)}}><Chess /><Typography>Tactics</Typography></ListItem>
         <ListItem sx={listItem} onClick={() => {handleClose(); navigate('/portfolio')}}><Mouse /><Typography>Portfolio</Typography></ListItem>
         <ListItem sx={listItem} onClick={() => {handleClose(); navigate('/energy')}}><Power /><Typography>Energy</Typography></ListItem>
         <ListItem ><Switch checked={isDarkMode} onChange={() => setIsDarkMode(!isDarkMode)} />

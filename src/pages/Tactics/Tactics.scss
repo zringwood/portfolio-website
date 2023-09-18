@@ -2,6 +2,24 @@
 @use '../../styles/colors' as *;
 
 @use '../../styles/animations' as *;
+.spoiler{
+    position: relative;
+    &__image{        
+        &--filter{
+            mask:linear-gradient(black, black);
+            filter:blur(25px);
+        }
+    }
+    &__label{
+        color:black;
+        position: absolute;
+        text-align: center;
+        top:45%;
+        right:40%;
+        margin: 0;
+    }
+
+}
 .fadein{
     animation-name: fadein;
     animation-duration: 2s;
@@ -15,5 +33,11 @@
         animation-name: fadein;
         animation-delay: 4s;
         animation-duration: 2s;
+    }
+}
+.tactics__img{
+    width:100%;
+    @include tablet{
+        width:50%;
     }
 }
