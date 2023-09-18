@@ -123,13 +123,7 @@ function Biography() {
                 </Box>
                 
             </Box>
-            <Box component="section"  sx={{...section, backgroundColor:"background.lighter"}} >
-                <Typography component="h2" variant="h3">Education</Typography>
-                <Typography component="h4" variant="h4">Brainstation</Typography>
-                <Typography variant="body1">Diploma in Software Development</Typography >
-                <Typography component="h4" variant="h4">Toronto Metropolitan</Typography>
-                <Typography variant="body1">Bachelors Degree in Philosophy</Typography >
-            </Box >
+           
             
         </>)
 }
