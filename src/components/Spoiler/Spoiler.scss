@@ -1,0 +1,27 @@
+@use '../../styles/partials' as *;
+@use '../../styles/colors' as *;
+
+.spoiler{
+    position: relative;
+    @include desktop{
+        width: 60%;
+    }
+    &__image{
+        width: 100%;
+        
+        &--filter{
+            mask:linear-gradient(black, black);
+            filter:blur(25px);
+        }
+
+    }
+    &__label{
+        color:black;
+        position: absolute;
+        text-align: center;
+        top:45%;
+        right:40%;
+        margin: 0;
+    }
+
+}
