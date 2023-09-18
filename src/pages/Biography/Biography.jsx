@@ -5,7 +5,7 @@ import AnimationSection from "../../components/AnimationSection/AnimationSection
 import { Box, Typography, useTheme } from "@mui/material"
 import Chess from "../../assets/ChessIcon"
 import ProjectCard from "../../components/ProjectCard/ProjectCard"
-import { Mouse } from "@mui/icons-material"
+import { Mouse, Power } from "@mui/icons-material"
 
 
 function Biography() {
@@ -47,6 +47,9 @@ function Biography() {
             <Box component="section"  
             sx={{...section, backgroundColor:"background.lighter", display:"flex", flexDirection:"column", rowGap:theme.spacing(2)}}>
                 <Typography component="h2" variant="h2" >Projects</Typography>
+                <AnimationSection animations={"projectCard--fadeup"}>
+                <ProjectCard title="Energy Infrastructure" description={"I set up the entire IT infrastructure for a midsize energy company. Click here to find out how I did it."} icon={<Power sx={{height:"100px"}}/>} target={"/energy"}/>
+                </AnimationSection>
                 <AnimationSection animations={"projectCard--fadeup"} >
                     <ProjectCard title="Tactics DB" description={"A huge database of pick-up-and-play chess puzzles for your commute!"} icon={<Chess sx={{height:"100px"}}/>} target={"/tactics"}/>
                 </AnimationSection>
@@ -64,15 +67,7 @@ function Biography() {
                        rowGap: theme.spacing(1),
                        columnGap: theme.spacing(1),
                        justifyContent: "center",
-                       [ theme.breakpoints.up("sm")]:{
-                           width:"70%",
-                           rowGap: "3rem",
-                           columnGap: "3rem",
-                           margin: "0 auto",
-                       },
-                       [ theme.breakpoints.up("md")]:{
-                           flexWrap: "nowrap",
-                       }
+                       
                     }}>
                 <AnimationSection animations={"skillcard--slideleft"}>
                 <SkillCard title="Webdev" skillArray={

@@ -3,7 +3,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Box, Drawer, List, ListItem, Switch, Typography, useTheme } from '@mui/material';
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {DarkMode, Home, LightMode, Mouse } from '@mui/icons-material';
+import {DarkMode, Home, LightMode, Mouse, Power } from '@mui/icons-material';
 import Chess from '../../assets/ChessIcon';
 
 const listItem = {
@@ -44,6 +44,7 @@ function NavigationMenu() {
         <ListItem sx={listItem} onClick={() => {handleClose(); navigate('/')}}><Home /><Typography>Home</Typography></ListItem>
         <ListItem sx={listItem} onClick={() => {handleClose(); navigate('/tactics')}}><Chess /><Typography>Tactics</Typography></ListItem>
         <ListItem sx={listItem} onClick={() => {handleClose(); navigate('/portfolio')}}><Mouse /><Typography>Portfolio</Typography></ListItem>
+        <ListItem sx={listItem} onClick={() => {handleClose(); navigate('/energy')}}><Power /><Typography>Energy</Typography></ListItem>
         <ListItem ><Switch checked={isDarkMode} onChange={() => setIsDarkMode(!isDarkMode)} />
         {isDarkMode ? <DarkMode/>:<LightMode />}</ListItem>
         </List>
