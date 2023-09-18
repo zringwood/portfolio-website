@@ -1,4 +1,5 @@
 import useOnScreen from "../../hooks/UseOnScreen"
+import "./AnimationSection.scss"
 function AnimationSection({className, children, animations}){
     const [ref, isIntersecting] = useOnScreen()
     if(!(typeof children === Array)){

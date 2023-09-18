@@ -1,0 +1,18 @@
+@use '../../styles/animations' as *;
+.fadeup{
+    animation-name: fadeup;
+    animation-duration: 1s;
+    &--mediumdelay{
+        opacity: 1;
+        transition: opacity 0;
+        transition-delay: 2s;
+        transition-duration: 1s;
+        transition-timing-function:linear;
+    }
+}
+.long-delay{
+    animation-delay: 2s;
+}
+.medium-delay{
+    animation-delay: 1s;
+}
