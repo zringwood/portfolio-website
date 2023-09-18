@@ -6,7 +6,7 @@ export default function ProjectCard({ title, description, target, icon }) {
     const navigate = useNavigate()
     const theme = useTheme()
     return (
-        <Card sx={{backgroundColor:"background.paper"}} onClick={() => navigate({target})}>
+        <Card sx={{backgroundColor:"background.paper"}} onClick={() => {navigate(target);window.scrollTo(0,0)}}>
             <CardContent>
                 <Box sx={{display:'flex',alignItems:"center", columnGap:theme.spacing(2)}}>
                     {icon}
