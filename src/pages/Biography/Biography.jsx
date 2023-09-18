@@ -16,7 +16,7 @@ function Biography() {
   }
     return (<>
             <Box component="section"  
-            sx={{...section, backgroundColor:"background.lighter"}} >
+            sx={{...section}} >
                 <Box sx={{
                     display: "flex",
                     flexDirection: "column",
