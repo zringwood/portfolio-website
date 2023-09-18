@@ -1,46 +1,79 @@
-import "./Biography.scss"
 import Headshot from "../../assets/headshot.png"
-import TacticsDB_icon from "../../assets/tacticsDB-icon.svg"
-import { useNavigate } from "react-router"
+import "./Biography.scss"
 import SkillCard from "../../components/SkillCard/SkillCard"
 import AnimationSection from "../../components/AnimationSection/AnimationSection"
+import { Box, Typography, useTheme } from "@mui/material"
+import Chess from "../../assets/ChessIcon"
+import ProjectCard from "../../components/ProjectCard/ProjectCard"
+import { Mouse } from "@mui/icons-material"
+
+
 function Biography() {
-    const navigate = useNavigate()
-    
+  const theme = useTheme()
+  const section = {
+    padding:theme.spacing(3),
+    backgroundColor:"background.default"
+  }
     return (<>
-            <section className="profile">
-                <div className="profile__content">
-                <img className="profile__headshot" src={Headshot} alt="My Headshot"></img>
-                <p className="profile__text">I am an ambitious software engineer with a passion for mathematics and elegant
+            <Box component="section"  
+            sx={{...section, backgroundColor:"background.lighter"}} >
+                <Box sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    columnGap:theme.spacing(3),
+                    marginBottom:theme.spacing(1),
+                    [ theme.breakpoints.up("sm")]:{
+                        flexDirection:"row"
+                    }}}>
+                <Box component="img" src={Headshot} alt="My Headshot" sx={{  
+                    width:"100%",
+                    objectFit:"scale-down",
+                   [ theme.breakpoints.up("sm")]:{
+                       width:"50%",
+                       height:"50%",
+                   }
+        }}></Box>
+                <Typography variant="body1">I am an ambitious software engineer with a passion for mathematics and elegant
                     problem-solving. With a strong background in the humanities complimenting my dedication to software development I’m sure I can be a valuable addition to any team.
-                </p>
-                </div>
-                <div className="profile__links">
+                </Typography>
+                </Box>
+                <Box sx={{ display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-around"}} >
                     <a href="https://linkedin.com/in/zachary-ringwood">Linkedin</a>
                     <a href="https://github.com/zringwood">Github</a>
-                </div>
-            </section>
-            <section className="projects">
-                <h2 className="projects__title">Projects</h2>
-                <AnimationSection className="projectCard" animations={"projectCard--fadeup"}  onClick={() => navigate("/tactics")}>
-                    <h3 className="projectCard__title" >Tactics DB</h3>
-                    <div className="projectCard__content">
-                        <img className="projectCard__icon" src={TacticsDB_icon} alt=""></img>
-                        <p className="projectCard__description">A huge database of pick-up-and-play chess puzzles for your commute!</p>
-                    </div>
+                </Box>
+            </Box>
+            <Box component="section"  
+            sx={{...section, backgroundColor:"background.lighter", display:"flex", flexDirection:"column", rowGap:theme.spacing(2)}}>
+                <Typography component="h2" variant="h2" >Projects</Typography>
+                <AnimationSection animations={"projectCard--fadeup"} >
+                    <ProjectCard title="Tactics DB" description={"A huge database of pick-up-and-play chess puzzles for your commute!"} icon={<Chess sx={{height:"100px"}}/>} target={"/tactics"}/>
                 </AnimationSection>
-                <AnimationSection className="projectCard" animations={"projectCard--fadeup"} onClick={() => navigate("/portfolio")}>
-                    <h3 className="projectCard__title">Portfolio Website</h3>
-                    <div className="projectCard__content">
-                        <img className="projectCard__icon" src={TacticsDB_icon} alt=""></img>
-                        <p className="projectCard__description">Click here for a writeup on how this website was designed using Amazon's microservices model of cloud computing.</p>
-                    </div>
+                <AnimationSection animations={"projectCard--fadeup"}>
+                <ProjectCard title="Portfolio" description={"Click here for a writeup on how this website was designed using Amazon's microservices model of cloud computing."} icon={<Mouse sx={{height:"100px"}}/>} target={"/portfolio"}/>
                 </AnimationSection>
-            </section>
-            <section className="skills">
-                <h2>Skills</h2>
-                <br></br>
-                <div className="skills__list">
+            </Box>
+            <Box component="section" sx={{...section}}>
+                <Typography component="h2" variant="h2">Skills</Typography>
+                
+                <Box sx={{
+                       display:"flex",
+                       flexDirection: "row",
+                       flexWrap: "wrap",
+                       rowGap: theme.spacing(1),
+                       columnGap: theme.spacing(1),
+                       justifyContent: "center",
+                       [ theme.breakpoints.up("sm")]:{
+                           width:"70%",
+                           rowGap: "3rem",
+                           columnGap: "3rem",
+                           margin: "0 auto",
+                       },
+                       [ theme.breakpoints.up("md")]:{
+                           flexWrap: "nowrap",
+                       }
+                    }}>
                 <AnimationSection animations={"skillcard--slideleft"}>
                 <SkillCard title="Webdev" skillArray={
                     [
@@ -87,24 +120,17 @@ function Biography() {
                     ]
                 } />
                 </AnimationSection>
-                </div>
+                </Box>
                 
-            </section>
-            <section className="education">
-                <h2>Education</h2>
-                <h3>Brainstation</h3>
-                <h4>Diploma in Software Development</h4>
-                <h3>Toronto Metropolitan</h3>
-                <h4>Bachelors Degree in Philosophy</h4>
-            </section>
-            <footer className="contact">
-                <p>Email: zringwood@gmail.com</p>
-                <p>Phone: +1 647 648 4748</p>
-                <div className="contact__flex">
-                <p> <a href = "https://linkedin.com/in/zachary-ringwood">LinkedIn</a></p>
-                <p> <a href = "http://github.com/zringwood">GitHub</a></p>
-                </div>
-            </footer>
+            </Box>
+            <Box component="section"  sx={{...section, backgroundColor:"background.lighter"}} >
+                <Typography component="h2" variant="h3">Education</Typography>
+                <Typography component="h4" variant="h4">Brainstation</Typography>
+                <Typography variant="body1">Diploma in Software Development</Typography >
+                <Typography component="h4" variant="h4">Toronto Metropolitan</Typography>
+                <Typography variant="body1">Bachelors Degree in Philosophy</Typography >
+            </Box >
+            
         </>)
 }
 

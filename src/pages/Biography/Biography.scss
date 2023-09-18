@@ -1,118 +1,9 @@
 @use '../../styles/partials' as *;
 @use '../../styles/colors' as *;
 @use '../../styles/animations' as *;
-ul{
-    list-style-type: none;
-}
-section{
-    padding: $mobile-indent;
-    @include tablet{
-        padding: $tablet-indent;
-    }
-    @include desktop {
-        padding: $tablet-indent;
-    }
-}
-.contact{
-    background-color: $background;
-    padding: $mobile-indent;
-    &__flex{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 50%;
-    }
-    @include tablet{
-        padding: $tablet-indent;
-    }
-    @include desktop {
-        padding: $tablet-indent;
-    }
-}
 
-.profile{
-    background-color: $background;
-    padding: $mobile-indent;
-    @include tablet{
-        padding: $tablet-indent;
-    }
-    &__headshot{
-        width:100%;
-        @include tablet{
-            width:50%;
-            height:50%;
-        }
-    }
-    &__content{
-        display: flex;
-        flex-direction: column;
-        @include tablet{
-            flex-direction: row;
-            column-gap: $tablet-indent;
-            margin-bottom: 1rem;
-        }
-    }
-    &__text{
-        color: white;
-        margin:0;
-    }
-    &__links{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-}
-.education{
-    background-color: $foreground;
-}
-.projects{
-    background-color: $foreground;
-    &__title{
-        margin-bottom: 1rem;
-        @include tablet{
-            margin-bottom: 1.5rem;
-        }
-    }
-}
-.skills{
-    background-color: $background;
-    
 
-}
-.skills__list{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    row-gap: 1rem;
-    column-gap: 1rem;
-    justify-content: center;
-    @include tablet{
-        width:70%;
-        row-gap: 3rem;
-        column-gap: 3rem;
-        margin: 0 auto;
-    }
-    @include desktop{
-        display: flex;
-        flex-wrap: nowrap;
-    }
-}
 .skillcard{
-    @include desktop{
-        display:flex;
-        flex-direction: column;
-        border:1px solid $divider;
-        border-radius: 12px;
-        padding:$mobile-indent;
-        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
-        background-color: $highlight;
-
-    }
-    &__skill{
-        @include desktop{
-            font-size: 2rem;
-        }
-    }
     &--slideleft{
         animation-name: slidein;
         animation-duration: 1s;
@@ -143,30 +34,6 @@ section{
         }    }
 }
 .projectCard{
-    display:flex;
-    flex-direction: column;
-    border:1px solid $divider;
-    border-radius: 12px;
-    margin: 1rem 0;
-    padding:$mobile-indent;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
-    background-color: $highlight;
-    &:hover{
-        transition: 0.5s;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
-    }
-    &__content{
-        display:flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    &__title{
-        margin:0;
-    }
-    &__icon{
-        height:80px;
-    }
     &--fadeup{
         animation-name: fadeup;
         animation-duration: 1s;

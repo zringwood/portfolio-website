@@ -1,18 +1,24 @@
-import "./SkillCard.scss"
-import Skill from "../Skill/Skill"
+import { Card, Typography, useTheme } from "@mui/material"
+import CardContent from '@mui/material/CardContent';
+import Skill from '../Skill/Skill'
 function SkillCard({title, skillArray}){
+    const theme = useTheme()
     return (
-        <article className="skillcard">
-            <h3>{title}</h3>
-            <ul className="skillcard__list">
-                {skillArray.map((e) => {
-                    return (
-                    <li className="skillcard__skill" key={e.title}>
-                        <Skill title={e.title} writeup={e.writeup}/>
-                    </li>)
-                })}
-            </ul>
-        </article>
+        <Card sx={{
+            width:"13.25rem",
+            backgroundColor:"background.paper",
+            [ theme.breakpoints.up("sm")]:{
+                width:"15rem",
+            }}}>
+            <CardContent>
+            <Typography variant="h4" component="h4">{title}</Typography>
+            
+                {skillArray.map((e,index) =>     
+                <Skill key={index} title={e.title} writeup={e.writeup} />
+                )}
+            
+            </CardContent>
+        </Card>
     )
 }
 export default SkillCard
