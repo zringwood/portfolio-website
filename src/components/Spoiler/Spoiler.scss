@@ -3,7 +3,12 @@
 
 .spoiler{
     position: relative;
-    &__image{        
+   @include tablet{
+    width:50%;
+   }
+    &__image{     
+        width:100%;
+        
         &--filter{
             mask:linear-gradient(black, black);
             filter:blur(25px);
