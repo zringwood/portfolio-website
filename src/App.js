@@ -8,10 +8,13 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import NavigationMenu from "./components/NavigationMenu/NavigationMenu";
 import Footer from "./components/Footer/Footer";
 import { ThemeProvider, createTheme } from "@mui/material";
+import { useState } from "react";
 function App() {
+  const [mode, setMode] = useState("dark")
+  console.log("Reached")
   const theme = createTheme({
     palette: {
-      mode: 'dark'
+      mode: mode
     },
     components: {
       MuiAccordion: {
@@ -28,7 +31,7 @@ function App() {
       <LocalizationProvider dateAdapter={AdapterDayjs}>
 
         <BrowserRouter>
-          <NavigationMenu sx={{
+          <NavigationMenu setMode={setMode} sx={{
             zIndex: 200000,
             position: "fixed",
             right: "5%",
