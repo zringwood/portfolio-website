@@ -30,17 +30,3 @@ $desktop-indent: calc(
   $base-desktop-indent + ((1vw * 100) - $desktop-breakpoint) / 2
 );
 
-a {
-  color:$text;
-  &:visited{
-    color:$text;
-  }
-}
-p{
-  color:$text;
-  
-}
-h1, h2, h3, h4{
-  color:$text;
-  margin: 0;
-}

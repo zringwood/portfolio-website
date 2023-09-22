@@ -2,7 +2,7 @@ import Headshot from "../../assets/headshot.png"
 import "./Biography.scss"
 import SkillCard from "../../components/SkillCard/SkillCard"
 import AnimationSection from "../../components/AnimationSection/AnimationSection"
-import { Box, Typography, useTheme, Button, TextField } from "@mui/material"
+import { Box, Typography, useTheme, Button, TextField, Link } from "@mui/material"
 import Chess from "../../assets/ChessIcon"
 import ProjectCard from "../../components/ProjectCard/ProjectCard"
 import { Mouse, Power } from "@mui/icons-material"
@@ -87,8 +87,8 @@ function Biography() {
                 <Box sx={{ display: "flex",
         flexDirection: "row",
         justifyContent: "space-around"}} >
-                    <a href="https://linkedin.com/in/zachary-ringwood">Linkedin</a>
-                    <a href="https://github.com/zringwood">Github</a>
+                    <Link href="https://linkedin.com/in/zachary-ringwood">Linkedin</Link>
+                    <Link href="https://github.com/zringwood">Github</Link>
                 </Box>
             </Box>
             <Box component="section"  

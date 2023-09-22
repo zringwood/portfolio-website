@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme } from "@mui/material"
+import { Box, Typography, useTheme, Link } from "@mui/material"
 
 export default function Footer(){
     const theme = useTheme()
@@ -17,8 +17,8 @@ export default function Footer(){
             width:"30%"
         }
     }}>
-                <Typography variant="body2"> <a href = "https://linkedin.com/in/zachary-ringwood">LinkedIn</a></Typography>
-                <Typography variant="body2"> <a href = "http://github.com/zringwood">GitHub</a></Typography>
+                <Typography variant="body2"> <Link href = "https://linkedin.com/in/zachary-ringwood">LinkedIn</Link></Typography>
+                <Typography variant="body2"> <Link href = "http://github.com/zringwood">GitHub</Link></Typography>
                 </Box>
             </Box>
     )
