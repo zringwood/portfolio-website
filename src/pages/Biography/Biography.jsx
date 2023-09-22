@@ -78,7 +78,7 @@ function Biography() {
                     [
                         {title:"React", writeup:"React is my best framework and the one I learned at Brainstation. All of my portfolio projects were created using React, including this website."},
                         {title:"Javascript", writeup:`I'm proud of my capacity to code with Javascript. I try to emphasize readability as much as possible. Have a look at the way I've written TacticsDB and you can see my commitment to readability.`},
-                        {title:"MySQL", writeup:"MySQL is the database manager I'm most familiar with. I don't have a portfolio project to demonstrate my knowledge of MySQL yet, but I have one coming soon."},
+                        {title:"MySQL", writeup:"MySQL is the database manager I'm most familiar with. I still believe it's the best for the vast majority of projects, and I know it so well I can get a databse to run on a reel of tape."},
                         {title:"NoSQL", writeup:"I've used NoSQL through Firebase to set up the database for tactics-db. It has more that 3 million entries and I populated it all myself. You can see the API used to access the database on my GitHub."},
                         {title:"HTML", writeup:""},
                         {title:"CSS", writeup:""},
