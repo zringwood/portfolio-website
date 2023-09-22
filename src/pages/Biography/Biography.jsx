@@ -34,8 +34,9 @@ function Biography() {
                        height:"50%",
                    }
         }}></Box>
-                <Typography variant="body1">I am an ambitious software engineer with a passion for mathematics and elegant
-                    problem-solving. With a strong background in the humanities complimenting my dedication to software development I’m sure I can be a valuable addition to any team.
+                <Typography variant="body1">
+                    I am a professional full-stack engineer who specializes in developing the minimum viable product for startups, game designers, Web3 entrepreneurs, and many more. 
+                    So far I have helped to secure over $50,000 in funding and I want you to be my next success story. 
                 </Typography>
                 </Box>
                 <Box sx={{ display: "flex",
