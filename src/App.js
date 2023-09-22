@@ -10,7 +10,7 @@ import Footer from "./components/Footer/Footer";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { useState } from "react";
 function App() {
-  const [mode, setMode] = useState("dark")
+  const [mode, setMode] = useState(localStorage.getItem("mode") || "dark")
   const theme = createTheme({
     palette: {
       mode: mode

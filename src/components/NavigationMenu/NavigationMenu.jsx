@@ -4,6 +4,7 @@ import { Box, Drawer, List, ListItem, Switch, Typography } from '@mui/material';
 import {   useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import {ArrowBack, DarkMode, Home, LightMode, Mouse, Power } from '@mui/icons-material';
+import {useTheme} from "@mui/material"
 import Chess from '../../assets/ChessIcon';
 
 const listItem = {
@@ -14,7 +15,9 @@ const listItem = {
 function NavigationMenu({setMode}) {
   const navigate = useNavigate()
     const [isOpen, setIsOpen] = useState(false)
-    const [isDarkMode, setIsDarkMode] = useState(true)
+    const theme = useTheme()
+    const [isDarkMode, setIsDarkMode] = useState(theme.palette.mode === "dark")
+    
     const location = useLocation().pathname
     
     const handleClose = () => {
@@ -52,6 +55,7 @@ function NavigationMenu({setMode}) {
         <ListItem sx={listItem} onClick={() => {handleClose(); navigate('/energy')}}><Power /><Typography>Energy</Typography></ListItem>
         <ListItem ><Switch checked={isDarkMode} onChange={() => {
           setMode(!isDarkMode ? "dark":"light") 
+          localStorage.setItem("mode", !isDarkMode ? "dark":"light")
           setIsDarkMode(!isDarkMode) }}
           />
         {isDarkMode ? <DarkMode/>:<LightMode />}</ListItem>
