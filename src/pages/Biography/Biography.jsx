@@ -8,10 +8,11 @@ import ProjectCard from "../../components/ProjectCard/ProjectCard"
 import { Mouse, Power } from "@mui/icons-material"
 import { DateTimePicker } from "@mui/x-date-pickers"
 import dayjs from "dayjs"
+import emailjs from '@emailjs/browser';
 import { useState } from "react"
 
+const defaultMessage = "Yes, I want to receive my FREE consultation!"
 const sectionHeader = "h2"
-const subheader = "h4"
 function Biography() {
   const theme = useTheme()
   const section = {
@@ -19,11 +20,44 @@ function Biography() {
     backgroundColor:"background.default"
   }
   const [isEmailError, setIsEmailError] = useState(false)
+  const [isShowingSubmitMessage, setIsShowingSubmitMessage] = useState(false)
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false)
+  const [date, setDate] = useState(dayjs().set("hour",14).set("minute", 0).set("day", dayjs().get("day")+7))
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [content, setContent] = useState(defaultMessage)
   const sendBooking = (e) => {
     e.preventDefault()
-    setIsEmailError(e.target.email.value.length === 0)
-    setIsSubmitSuccessful(!isEmailError)
+    setIsEmailError(email.length === 0)
+    
+    const message = {
+        name:name,
+        date:date.$d,
+        email:email,
+        content:content
+    }
+    console.log(email, email.length, isEmailError)
+    //This can't reference the isEmailError state because it doesn't update in time. 
+    if(!(email.length === 0)){
+console.log("Reached")
+        emailjs.send(
+             process.env.REACT_APP_EMAILJS_SERVICE_ID, 
+            process.env.REACT_APP_EMAILJS_TEMPLATE_ID, 
+            message,
+             process.env.REACT_APP_EMAILJS_KEY, 
+            )
+        .then(function(response) {
+           console.log('SUCCESS!', response.status, response.text);
+           setIsShowingSubmitMessage(true)
+           setIsSubmitSuccessful(true)
+        }, function(error) {
+           console.log('FAILED...', error);
+           setIsShowingSubmitMessage(true)
+           setIsSubmitSuccessful(false)
+
+        });
+
+    }
   }
     return (<>
             <Box component="section"  
@@ -136,12 +170,19 @@ function Biography() {
                     <form onSubmit={sendBooking}>
                         <Box sx={{display:"flex",flexDirection:"column",rowGap:theme.spacing(3)}}>
                         <Typography variant="body1">Reach out to book a free no-obligation consultation today.</Typography>
-                        <TextField variant="outlined" type="text" label="Name" name="name"/>
-                        <DateTimePicker variant="outlined" name="date" label="Meeting Date" defaultValue={dayjs().set("hour",14).set("minute", 0).set("day", dayjs().get("day")+7)} referenceDate={dayjs().set("hour",14).set("minute", 0).set("day", dayjs().get("day")+7)}/>
-                        <TextField variant="outlined" type="text" label="Email" name="email" id="email" error={isEmailError} onChange={e => setIsEmailError(e.target.value.length === 0) }/>
-                        <TextField variant="outlined" multiline rows="7" type="text" label="Message" name="content" defaultValue="Yes, I want to make my dreams come true!"/>
+                        <TextField variant="outlined" type="text" label="Name" name="name" id="name" value={name} onChange={e => setName(e.target.value)}/>
+                        <DateTimePicker variant="outlined" name="date" id="date" label="Meeting Date" defaultValue={date} onChange={e => setDate(e.target.value)}/>
+                        <TextField variant="outlined" type="text" label="Email" name="email" id="email" error={isEmailError} onChange={e => {setIsEmailError(e.target.value.length === 0); setEmail(e.target.value)} }/>
+                        <TextField variant="outlined" multiline rows="7" type="text" label="Message" name="content" id="content" value={content} placeholder={defaultMessage} onChange={e => setContent(e.target.value)} onFocus={() => {if(content === defaultMessage){setContent("")}}} onBlur={() => {if(content===""){setContent(defaultMessage)}}} />
                         <Button variant="outlined" type="submit">Send</Button>
-                        {isSubmitSuccessful && <Typography variant="body1" sx={{color:theme.palette.success.main}}>Message Sent! We'll send you a response within three days.</Typography>}
+
+                        {isShowingSubmitMessage && 
+                        (isSubmitSuccessful ? 
+                            <Typography variant="body1" sx={{color:theme.palette.success.main}}>Message Sent! We'll send you a response within three days.</Typography>:
+                            <Typography variant="body1" sx={{color:theme.palette.warning.dark}}>Something went wrong. Don't worry, you can still email me directly at zringwood@gmail.com.</Typography>
+                        )
+                        }
+                        
                         </Box>
                     </form>
                 </Box>

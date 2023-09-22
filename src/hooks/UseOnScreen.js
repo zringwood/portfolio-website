@@ -12,10 +12,10 @@ function useOnScreen(options) {
       if (ref.current) {
         observer.observe(ref.current);
       }
-  
+      const save = ref.current
       return () => {
-        if (ref.current) {
-          observer.unobserve(ref.current);
+        if (save) {
+          observer.unobserve(save);
         }
       };
     }, [options]);
