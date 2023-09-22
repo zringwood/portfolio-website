@@ -167,9 +167,9 @@ console.log("Reached")
             </Box>
                 <Box component = "section" sx={{...section, backgroundColor:"background.lighter"}}>
                     <Typography variant={sectionHeader}>Contact</Typography>
+                    <Typography variant="body1" sx={{marginBottom:theme.spacing(3)}}>Reach out to book a free no-obligation consultation today.</Typography>
                     <form onSubmit={sendBooking}>
-                        <Box sx={{display:"flex",flexDirection:"column",rowGap:theme.spacing(3)}}>
-                        <Typography variant="body1">Reach out to book a free no-obligation consultation today.</Typography>
+                        <Box sx={{display:"flex",flexDirection:"column",rowGap:theme.spacing(3),[theme.breakpoints.up("sm")]:{width:"70%", margin:"auto"},[theme.breakpoints.up("lg")]:{width:"50%", margin:"auto"}}}>
                         <TextField variant="outlined" type="text" label="Name" name="name" id="name" value={name} onChange={e => setName(e.target.value)}/>
                         <DateTimePicker variant="outlined" name="date" id="date" label="Meeting Date" defaultValue={date} onChange={e => setDate(e.target.value)}/>
                         <TextField variant="outlined" type="text" label="Email" name="email" id="email" error={isEmailError} onChange={e => {setIsEmailError(e.target.value.length === 0); setEmail(e.target.value)} }/>
