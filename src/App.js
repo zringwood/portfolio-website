@@ -7,11 +7,10 @@ import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import NavigationMenu from "./components/NavigationMenu/NavigationMenu";
 import Footer from "./components/Footer/Footer";
-import { ThemeProvider, createTheme } from "@mui/material";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { useState } from "react";
 function App() {
   const [mode, setMode] = useState("dark")
-  console.log("Reached")
   const theme = createTheme({
     palette: {
       mode: mode
@@ -25,11 +24,16 @@ function App() {
     },
 
   })
+  if(mode === "dark")
   theme.palette.background.lighter = newShade(theme.palette.background.default, 10)
+else if(mode === "light"){
+  theme.palette.background.lighter = 'rgb(228,228,228)'
+}
+
   return (
     <ThemeProvider theme={theme}>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-
+      <CssBaseline >
         <BrowserRouter>
           <NavigationMenu setMode={setMode} sx={{
             zIndex: 200000,
@@ -46,7 +50,7 @@ function App() {
           </Routes>
           <Footer />
         </BrowserRouter>
-
+        </ CssBaseline >
       </LocalizationProvider>
     </ThemeProvider>
 

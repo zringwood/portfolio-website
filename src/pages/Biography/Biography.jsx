@@ -39,7 +39,6 @@ function Biography() {
     console.log(email, email.length, isEmailError)
     //This can't reference the isEmailError state because it doesn't update in time. 
     if(!(email.length === 0)){
-console.log("Reached")
         emailjs.send(
              process.env.REACT_APP_EMAILJS_SERVICE_ID, 
             process.env.REACT_APP_EMAILJS_TEMPLATE_ID, 

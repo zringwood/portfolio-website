@@ -51,8 +51,9 @@ function NavigationMenu({setMode}) {
         <ListItem sx={listItem} onClick={() => {handleClose(); navigate('/portfolio')}}><Mouse /><Typography>Portfolio</Typography></ListItem>
         <ListItem sx={listItem} onClick={() => {handleClose(); navigate('/energy')}}><Power /><Typography>Energy</Typography></ListItem>
         <ListItem ><Switch checked={isDarkMode} onChange={() => {
-          setIsDarkMode(!isDarkMode)
-          setMode(isDarkMode ? "dark":"light")}} />
+          setMode(!isDarkMode ? "dark":"light") 
+          setIsDarkMode(!isDarkMode) }}
+          />
         {isDarkMode ? <DarkMode/>:<LightMode />}</ListItem>
         </List>
       </Drawer>
