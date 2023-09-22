@@ -2,19 +2,29 @@ import Headshot from "../../assets/headshot.png"
 import "./Biography.scss"
 import SkillCard from "../../components/SkillCard/SkillCard"
 import AnimationSection from "../../components/AnimationSection/AnimationSection"
-import { Box, Typography, useTheme } from "@mui/material"
+import { Box, Typography, useTheme, Button, TextField } from "@mui/material"
 import Chess from "../../assets/ChessIcon"
 import ProjectCard from "../../components/ProjectCard/ProjectCard"
 import { Mouse, Power } from "@mui/icons-material"
+import { DateTimePicker } from "@mui/x-date-pickers"
+import dayjs from "dayjs"
+import { useState } from "react"
 
-
+const sectionHeader = "h2"
+const subheader = "h4"
 function Biography() {
   const theme = useTheme()
   const section = {
     padding:theme.spacing(3),
     backgroundColor:"background.default"
   }
-  
+  const [isEmailError, setIsEmailError] = useState(false)
+  const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false)
+  const sendBooking = (e) => {
+    e.preventDefault()
+    setIsEmailError(e.target.email.value.length === 0)
+    setIsSubmitSuccessful(!isEmailError)
+  }
     return (<>
             <Box component="section"  
             sx={{...section}} >
@@ -50,7 +60,7 @@ function Biography() {
             </Box>
             <Box component="section"  
             sx={{...section, backgroundColor:"background.lighter", display:"flex", flexDirection:"column", rowGap:theme.spacing(2)}}>
-                <Typography component="h2" variant="h2" >Projects</Typography>
+                <Typography component="h2" variant={sectionHeader} >Projects</Typography>
                 <AnimationSection animations={"projectCard--fadeup"}>
                 <ProjectCard title="Energy Infrastructure" description={"I set up the entire IT infrastructure for a midsize energy company. Click here to find out how I did it."} icon={<Power sx={{height:"100px"}}/>} target={"/energy"}/>
                 </AnimationSection>
@@ -62,7 +72,7 @@ function Biography() {
                 </AnimationSection>
             </Box>
             <Box component="section" sx={{...section}}>
-                <Typography component="h2" variant="h2">Skills</Typography>
+                <Typography component="h2" variant={sectionHeader}>Skills</Typography>
                 
                 <Box sx={{
                        display:"flex",
@@ -120,8 +130,21 @@ function Biography() {
                 } />
                 </AnimationSection>
                 </Box>
-                
             </Box>
+                <Box component = "section" sx={{...section, backgroundColor:"background.lighter"}}>
+                    <Typography variant={sectionHeader}>Contact</Typography>
+                    <form onSubmit={sendBooking}>
+                        <Box sx={{display:"flex",flexDirection:"column",rowGap:theme.spacing(3)}}>
+                        <Typography variant="body1">Reach out to book a free no-obligation consultation today.</Typography>
+                        <TextField variant="outlined" type="text" label="Name" name="name"/>
+                        <DateTimePicker variant="outlined" name="date" label="Meeting Date" defaultValue={dayjs().set("hour",14).set("minute", 0).set("day", dayjs().get("day")+7)} referenceDate={dayjs().set("hour",14).set("minute", 0).set("day", dayjs().get("day")+7)}/>
+                        <TextField variant="outlined" type="text" label="Email" name="email" id="email" error={isEmailError} onChange={e => setIsEmailError(e.target.value.length === 0) }/>
+                        <TextField variant="outlined" multiline rows="7" type="text" label="Message" name="content" defaultValue="Yes, I want to make my dreams come true!"/>
+                        <Button variant="outlined" type="submit">Send</Button>
+                        {isSubmitSuccessful && <Typography variant="body1" sx={{color:theme.palette.success.main}}>Message Sent! We'll send you a response within three days.</Typography>}
+                        </Box>
+                    </form>
+                </Box>
            
             
         </>)
