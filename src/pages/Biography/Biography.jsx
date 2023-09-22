@@ -23,8 +23,10 @@ function Biography() {
                     flexDirection: "column",
                     columnGap:theme.spacing(3),
                     marginBottom:theme.spacing(1),
+                    rowGap: theme.spacing(3),
                     [ theme.breakpoints.up("sm")]:{
-                        flexDirection:"row"
+                        // flexDirection:"row"
+                        justifyContent: "center",
                     }}}>
                 <Box component="img" src={Headshot} alt="My Headshot" sx={{  
                     width:"100%",
@@ -32,11 +34,12 @@ function Biography() {
                    [ theme.breakpoints.up("sm")]:{
                        width:"50%",
                        height:"50%",
+                       margin:"auto"
                    }
         }}></Box>
                 <Typography variant="body1">
                     I am a professional full-stack engineer who specializes in developing the minimum viable product for startups, game designers, Web3 entrepreneurs, and many more. 
-                    So far I have helped to secure over $50,000 in funding and I want you to be my next success story. 
+                    So far I have helped to secure over $50,000 in funding and I want you to be my next success story. Let's work together to get a interactive prototype into the hands of investors and prospective employees today. 
                 </Typography>
                 </Box>
                 <Box sx={{ display: "flex",
