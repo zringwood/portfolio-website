@@ -25,7 +25,6 @@ function Biography() {
                     marginBottom:theme.spacing(1),
                     rowGap: theme.spacing(3),
                     [ theme.breakpoints.up("sm")]:{
-                        // flexDirection:"row"
                         justifyContent: "center",
                     }}}>
                 <Box component="img" src={Headshot} alt="My Headshot" sx={{  
@@ -106,7 +105,7 @@ function Biography() {
                 }/>
                 </AnimationSection>
                 <AnimationSection animations={"skillcard--slideright  skillcard--long"}>
-                <SkillCard title="Buisness" skillArray={
+                <SkillCard title="Business" skillArray={
                     [
                         {title:"Public Speaking",
                         writeup:"While in high school I was the head of the debate team for two years and taught public speaking regularly. I am very confident in front of a crowd and can write and perform a speech in a single day with no fear. This is likely my strongest non-tech skill."    
