@@ -2,8 +2,8 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box, Drawer, List, ListItem, Switch, Typography, useTheme } from '@mui/material';
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import {DarkMode, Home, LightMode, Mouse, Power } from '@mui/icons-material';
+import { useLocation, useNavigate } from "react-router-dom";
+import {ArrowBack, DarkMode, Home, LightMode, Mouse, Power } from '@mui/icons-material';
 import Chess from '../../assets/ChessIcon';
 
 const listItem = {
@@ -15,6 +15,7 @@ function NavigationMenu() {
   const navigate = useNavigate()
     const [isOpen, setIsOpen] = useState(false)
     const [isDarkMode, setIsDarkMode] = useState(true)
+    const location = useLocation().pathname
     const theme = useTheme()
     const handleClose = () => {
         setIsOpen(false);
@@ -25,11 +26,18 @@ function NavigationMenu() {
     return <Box sx={{
       position:'fixed',
       zIndex:"20",
-      right:'5%',
       top:'5%',
       borderRadius:"50%",
+      width:'100%',
+      display:"flex",
+      flexDirection:"row",
+      
       }}>
-        <IconButton sx={{backgroundColor:"primary.dark"}} className="sidebar__activate" id="hamburger-button" onClick={() => setIsOpen(!isOpen)} >
+        {location !== "/" && 
+        <IconButton  onClick={() => navigate("/")}>
+          <ArrowBack  />
+        </IconButton>}
+        <IconButton sx={{marginLeft:"auto"}} className="sidebar__activate" id="hamburger-button" onClick={() => setIsOpen(!isOpen)} >
             <MenuIcon />
         </IconButton>
         
