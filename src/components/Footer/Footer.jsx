@@ -7,7 +7,7 @@ export default function Footer(){
             padding:theme.spacing(3), 
             backgroundColor:"background.lighter"}}>
                 <Typography variant="body2">Email: zringwood@gmail.com</Typography>
-                <Typography variant="body2">Phone: +1 647 648 4748</Typography>
+                <Typography variant="body2">Phone: +1 647 909 5978</Typography>
                 <Box sx={{
         display: "flex",
         flexDirection: "row",
